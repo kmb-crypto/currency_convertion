@@ -17,11 +17,11 @@ public class Transaction extends BaseEntity {
     private User user;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "from_currency", nullable = false, columnDefinition = "enum('rub','usd','eur','gbp')")
+    @Column(name = "from_currency", nullable = false, columnDefinition = "enum('RUB','USD','EUR','GBP')")
     private Currency currencyFrom;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "to_currency", nullable = false, columnDefinition = "enum('rub','usd','eur','gbp')")
+    @Column(name = "to_currency", nullable = false, columnDefinition = "enum('RUB','USD','EUR','GBP')")
     private Currency currencyTo;
 
     @Column(name = "amount", nullable = false)
