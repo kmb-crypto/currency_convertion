@@ -13,6 +13,8 @@ import java.util.List;
 @NoArgsConstructor
 public class User extends BaseEntity {
 
+    private String name;
+
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     private List<Transaction> transactions;

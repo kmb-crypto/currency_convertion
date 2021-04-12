@@ -57,6 +57,6 @@ public class ExchangeService {
 
         userRepository.save(user);
 
-        return new ResponseEntity<>(new ExchangeResponse(), HttpStatus.OK);
+        return new ResponseEntity<>(new ExchangeResponse(transaction.getId(),resultAmount.toString()), HttpStatus.OK);
     }
 }
