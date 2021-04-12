@@ -12,7 +12,7 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 public class Transaction extends BaseEntity {
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
@@ -32,4 +32,6 @@ public class Transaction extends BaseEntity {
 
     @Column(nullable = false)
     private Timestamp time;
+
+
 }

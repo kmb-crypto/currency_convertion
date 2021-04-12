@@ -1,8 +1,6 @@
 package main.service;
 
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Component;
 
@@ -33,7 +31,7 @@ public class ExchangeRateService {
 
         } catch (IOException e) {
             e.printStackTrace();
-            return BigDecimal.ZERO;
+            return null;
         }
     }
 }
