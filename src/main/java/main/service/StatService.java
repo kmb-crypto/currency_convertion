@@ -1,6 +1,7 @@
 package main.service;
 
 import main.api.response.StatByTransactionResponse;
+import main.api.response.StatUsersWithSumResponse;
 import main.repository.TransactionRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,10 +19,18 @@ public class StatService {
     }
 
     public ResponseEntity<StatByTransactionResponse> getStatByTransaction(final String currency, final String amount) {
-        List<Integer> userId = transactionRepository.findUserIdByAmountAndCurrency(currency,
+        List<Integer> userId = transactionRepository.findUsersIdByAmountAndCurrency(currency,
                 Long.parseLong(amount) * CENTS_IN_UNIT);
 
-        return new ResponseEntity<StatByTransactionResponse>(
+        return new ResponseEntity<>(
                 new StatByTransactionResponse(Integer.parseInt(amount), userId), HttpStatus.OK);
+    }
+
+    public ResponseEntity<StatUsersWithSumResponse> getStatUsersWithSum(final String currency, final String sum) {
+        List<Integer> userId = transactionRepository.findUsersIdWithSum(currency,
+                Long.parseLong(sum) * CENTS_IN_UNIT);
+
+        return new ResponseEntity<>(
+                new StatUsersWithSumResponse(Integer.parseInt(sum), userId), HttpStatus.OK);
     }
 }
