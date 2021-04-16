@@ -14,3 +14,12 @@ INSERT INTO transactions (amount, from_currency, to_currency, exchange_amount, t
 INSERT INTO transactions (amount, from_currency, to_currency, exchange_amount, time, user_id) VALUES (100000, 'USD', 'RUB', 7700000, CAST('2021-03-18 10:55:06.427' AS DateTime), 3);
 INSERT INTO transactions (amount, from_currency, to_currency, exchange_amount, time, user_id) VALUES (770000000, 'RUB', 'USD', 10000000, CAST('2021-03-18 10:55:06.427' AS DateTime), 4);
 INSERT INTO transactions (amount, from_currency, to_currency, exchange_amount, time, user_id) VALUES (1000000, 'GBP', 'RUB', 104258900, CAST('2021-03-19 10:55:06.427' AS DateTime), 3);
+INSERT INTO transactions (amount, from_currency, to_currency, exchange_amount, time, user_id) VALUES (1000000, 'RUB', 'USD', 13333, CAST('2021-03-20 10:55:06.427' AS DateTime), 4);
+INSERT INTO transactions (amount, from_currency, to_currency, exchange_amount, time, user_id) VALUES (1000000, 'RUB', 'USD', 13333, CAST('2021-03-20 10:56:06.427' AS DateTime), 4);
+INSERT INTO transactions (amount, from_currency, to_currency, exchange_amount, time, user_id) VALUES (1000000, 'RUB', 'USD', 13333, CAST('2021-03-20 10:57:06.427' AS DateTime), 4);
+INSERT INTO transactions (amount, from_currency, to_currency, exchange_amount, time, user_id) VALUES (1000000, 'RUB', 'USD', 13333, CAST('2021-03-20 10:58:06.427' AS DateTime), 4);
+INSERT INTO transactions (amount, from_currency, to_currency, exchange_amount, time, user_id) VALUES (1000000, 'RUB', 'USD', 13333, CAST('2021-03-20 10:59:06.427' AS DateTime), 4);
+INSERT INTO transactions (amount, from_currency, to_currency, exchange_amount, time, user_id) VALUES (1000000, 'RUB', 'USD', 13333, CAST('2021-03-20 11:55:06.427' AS DateTime), 4);
+INSERT INTO transactions (amount, from_currency, to_currency, exchange_amount, time, user_id) VALUES (1000000, 'RUB', 'USD', 13333, CAST('2021-03-20 11:56:06.427' AS DateTime), 4);
+INSERT INTO transactions (amount, from_currency, to_currency, exchange_amount, time, user_id) VALUES (1000000, 'RUB', 'USD', 13333, CAST('2021-03-20 11:57:06.427' AS DateTime), 4);
+INSERT INTO transactions (amount, from_currency, to_currency, exchange_amount, time, user_id) VALUES (1000000, 'RUB', 'USD', 13333, CAST('2021-03-20 11:58:06.427' AS DateTime), 4);

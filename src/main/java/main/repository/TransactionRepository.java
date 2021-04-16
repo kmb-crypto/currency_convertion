@@ -1,5 +1,6 @@
 package main.repository;
 
+import main.model.Pair;
 import main.model.Transaction;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -25,4 +26,7 @@ public interface TransactionRepository extends CrudRepository<Transaction, Integ
     List<Integer> findUsersIdWithSum(@Param("currency") final String currency,
                                      @Param("sum") final Long sum);
 
+    @Query(value = "SELECT CONCAT(from_currency,to_currency) AS pair FROM transactions " +
+            "GROUP BY pair ORDER BY COUNT(pair) desc", nativeQuery = true)
+    List<Pair> getTransactionsRank();
 }

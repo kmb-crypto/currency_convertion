@@ -1,12 +1,15 @@
 package main.service;
 
 import main.api.response.StatByTransactionResponse;
+import main.api.response.StatTransactionsRankResponse;
 import main.api.response.StatUsersWithSumResponse;
+import main.model.Pair;
 import main.repository.TransactionRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -32,5 +35,19 @@ public class StatService {
 
         return new ResponseEntity<>(
                 new StatUsersWithSumResponse(Integer.parseInt(sum), userId), HttpStatus.OK);
+    }
+
+    public ResponseEntity<StatTransactionsRankResponse> getTransactionsRank() {
+        List<Pair> transactionsRank = transactionRepository.getTransactionsRank();
+        return new ResponseEntity<>(transactionRank2Response(transactionsRank), HttpStatus.OK);
+    }
+
+    private StatTransactionsRankResponse transactionRank2Response(List<Pair> pairs) {
+        List<String> rankedPairs = new ArrayList<>();
+
+        for (Pair pair : pairs) {
+            rankedPairs.add(pair.getPair());
+        }
+        return new StatTransactionsRankResponse(rankedPairs);
     }
 }
