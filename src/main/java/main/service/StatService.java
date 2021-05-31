@@ -26,7 +26,7 @@ public class StatService {
                 Long.parseLong(amount) * CENTS_IN_UNIT);
 
         return new ResponseEntity<>(
-                new StatByTransactionResponse(Integer.parseInt(amount), userId), HttpStatus.OK);
+                new StatByTransactionResponse(Integer.parseInt(amount), currency, userId), HttpStatus.OK);
     }
 
     public ResponseEntity<StatUsersWithSumResponse> getStatUsersWithSum(final String currency, final String sum) {
@@ -34,7 +34,7 @@ public class StatService {
                 Long.parseLong(sum) * CENTS_IN_UNIT);
 
         return new ResponseEntity<>(
-                new StatUsersWithSumResponse(Integer.parseInt(sum), userId), HttpStatus.OK);
+                new StatUsersWithSumResponse(Integer.parseInt(sum), currency, userId), HttpStatus.OK);
     }
 
     public ResponseEntity<StatTransactionsRankResponse> getTransactionsRank() {

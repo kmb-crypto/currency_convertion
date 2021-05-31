@@ -11,5 +11,6 @@ import java.util.List;
 @AllArgsConstructor
 public class StatByTransactionResponse {
     private int amount;
+    private String currency;
     private List<Integer> usersId;
 }
